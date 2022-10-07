@@ -1,0 +1,27 @@
+/*Program to print length of longest parentheses string*/
+#include <iostream>
+using namespace std;
+int main()
+{
+    int open=0,close=0,i,max=0;
+    string s;
+    cout<<"Print a string of parentheses :- ";
+    cin>>s;
+    for(i=0;i<s.length();i++)
+    {
+        
+        if(s[i]=='(')
+        open++;
+        else if(s[i]==')')
+        close++;
+        if(open==close)
+        {
+            max=(max>open+close)?max:(open+close);
+            open=close=0;
+        }
+    }
+   
+    cout<<"Maximum valid length is :-"<<max;
+    return 0;
+}
+
